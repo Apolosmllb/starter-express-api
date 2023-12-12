@@ -17,6 +17,12 @@ app.use(json());
 
 //Routes
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+app.get("/api/v1/mailing", async (req, res) => {
+    return res
+      .status(200)
+      .json({ message: "ok", data: [] });
+});
 app.post("/api/v1/mailing", async (req, res) => {
   try {
     const form = req.body;
